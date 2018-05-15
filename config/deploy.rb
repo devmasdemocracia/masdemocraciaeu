@@ -44,6 +44,7 @@ namespace :deploy do
   before :starting, 'rvm1:install:rvm'  # install/update RVM
   before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
   before :starting, 'install_bundler_gem' # install bundler gem
+  before 'rvm1:install:rvm', 'app:update_rvm_key'
 
   after :publishing, 'deploy:restart'
   after :published, 'delayed_job:restart'
@@ -64,6 +65,14 @@ task :refresh_sitemap do
       with rails_env: fetch(:rails_env) do
         execute :rake, 'sitemap:refresh:no_ping'
       end
+    end
+  end
+end
+
+namespace :app do
+  task :update_rvm_key do
+    on roles(:all) do
+      execute :gpg, "--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"
     end
   end
 end
