@@ -9,11 +9,11 @@ end
 set :rails_env, fetch(:stage)
 set :rvm1_ruby_version, '2.3.2'
 
-set :application, 'consul'
+set :application, 'masdemocraciaeu'
 set :full_app_name, deploysecret(:full_app_name)
 
 set :server_name, deploysecret(:server_name)
-set :repo_url, 'https://github.com/consul/consul.git'
+set :repo_url, 'https://github.com/devmasdemocracia/masdemocraciaeu'
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
