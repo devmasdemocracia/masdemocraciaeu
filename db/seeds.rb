@@ -1,7 +1,7 @@
 # coding: utf-8
 # Default admin user (change password after first deploy to a server!)
 if Administrator.count == 0 && !Rails.env.test?
-  admin = User.create!(username: 'admin', email: 'admin@consul.dev', password: '12345678', password_confirmation: '12345678', confirmed_at: Time.current, terms_of_service: "1")
+  admin = User.create!(username: 'admin', email: 'devmasdemocraciaeneuropa@gmail.com', password: 'jhy?*123', password_confirmation: 'jhy?*123', confirmed_at: Time.current, terms_of_service: "1")
   admin.create_administrator
 end
 
@@ -14,19 +14,19 @@ Setting["official_level_4_name"] = "Concejales"
 Setting["official_level_5_name"] = "Alcaldesa"
 
 # Max percentage of allowed anonymous votes on a debate
-Setting["max_ratio_anon_votes_on_debates"] = 50
+Setting["max_ratio_anon_votes_on_debates"] = 0
 
 # Max votes where a debate is still editable
-Setting["max_votes_for_debate_edit"] = 1000
+Setting["max_votes_for_debate_edit"] = 0
 
 # Max votes where a proposal is still editable
-Setting["max_votes_for_proposal_edit"] = 1000
+Setting["max_votes_for_proposal_edit"] = 0
 
 # Max length for comments
 Setting['comments_body_max_length'] = 1000
 
 # Prefix for the Proposal codes
-Setting["proposal_code_prefix"] = 'MAD'
+Setting["proposal_code_prefix"] = 'MDEU'
 
 # Number of votes needed for proposal success
 Setting["votes_for_proposal_success"] = 53726
@@ -59,10 +59,10 @@ Setting["opendata_url"] = "/opendata"
 Setting["url"] = "http://example.com"
 
 # CONSUL installation's organization name
-Setting["org_name"] = "CONSUL"
+Setting["org_name"] = "MASDEMOCRACIAEUROPA"
 
 # CONSUL installation place name (City, Country...)
-Setting["place_name"] = "CONSUL-land"
+Setting["place_name"] = "MASDEMOCRACIA-europa"
 
 # Meta tags for SEO
 Setting["meta_title"] = nil
@@ -70,17 +70,17 @@ Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
 # Feature flags
-Setting['feature.debates'] = true
+Setting['feature.debates'] = false
 Setting['feature.proposals'] = true
 Setting['feature.spending_proposals'] = nil
-Setting['feature.polls'] = true
-Setting['feature.twitter_login'] = true
-Setting['feature.facebook_login'] = true
-Setting['feature.google_login'] = true
-Setting['feature.public_stats'] = true
-Setting['feature.budgets'] = true
-Setting['feature.signature_sheets'] = true
-Setting['feature.legislation'] = true
+Setting['feature.polls'] = false
+Setting['feature.twitter_login'] = false
+Setting['feature.facebook_login'] = false
+Setting['feature.google_login'] = false
+Setting['feature.public_stats'] = false
+Setting['feature.budgets'] = false
+Setting['feature.signature_sheets'] = false
+Setting['feature.legislation'] = false
 Setting['feature.user.recommendations'] = true
 Setting['feature.community'] = true
 Setting['feature.map'] = nil
@@ -106,12 +106,12 @@ Setting['proposal_notification_minimum_interval_in_days'] = 3
 Setting['direct_message_max_per_day'] = 3
 
 # Email settings
-Setting['mailer_from_name'] = 'CONSUL'
-Setting['mailer_from_address'] = 'noreply@consul.dev'
+Setting['mailer_from_name'] = 'MASDEMOCRACIAENEUROPA'
+Setting['mailer_from_address'] = 'noreply@masdemocraciaeneuropa.org'
 
 # Verification settings
-Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
-Setting['min_age_to_participate'] = 16
+Setting['verification_offices_url'] = nil
+Setting['min_age_to_participate'] = 0
 
 # Proposal improvement url path ('/help/proposal-improvement')
 Setting['proposal_improvement_path'] = nil
