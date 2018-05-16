@@ -80,13 +80,19 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Set paperclip configuration for AWS S3
+  # config.paperclip_defaults = {
+  #   storage: :s3,
+  #   s3_credentials: {
+  #     bucket: Rails.application.secrets.s3_bucket,
+  #     access_key_id: Rails.application.secrets.s3_access_key_id,
+  #     secret_access_key: Rails.application.secrets.s3_secret_access_key,
+  #     s3_region: Rails.application.secrets.s3_region
+  #   }
+  # }
   config.paperclip_defaults = {
-    storage: :s3,
-    s3_credentials: {
-      bucket: Rails.application.secrets.s3_bucket,
-      access_key_id: Rails.application.secrets.s3_access_key_id,
-      secret_access_key: Rails.application.secrets.s3_secret_access_key,
-      s3_region: Rails.application.secrets.s3_region
-    }
+    :storage => :s3,
+    :preserve_files => true,
+    :s3_host_name =>  "s3-eu-west-1.amazonaws.com",
+    :bucket => Rails.application.secrets.s3_bucket
   }
 end
