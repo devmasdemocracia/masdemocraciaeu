@@ -1,7 +1,7 @@
 set :deploy_to, deploysecret(:deploy_to)
 set :server_name, deploysecret(:server_name)
 set :db_server, deploysecret(:db_server)
-set :branch, "masdemocracia-production"
+set :branch, ENV['branch'] || "masdemocracia-production"
 set :ssh_options, port: deploysecret(:ssh_port)
 set :stage, :production
 set :rails_env, :production
