@@ -509,7 +509,7 @@ DEPENDENCIES
   ancestry (~> 3.0.1)
   animate-rails (~> 1.0.10)
   autoprefixer-rails (~> 8.2.0)
-  aws-sdk
+  aws-sdk (~> 2)
   browser (~> 2.5.2)
   bullet (~> 5.7.0)
   byebug (~> 10.0.0)
