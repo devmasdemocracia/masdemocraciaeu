@@ -21,7 +21,7 @@ set :log_level, :info
 set :pty, true
 set :use_sudo, false
 
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml config/unicorn.rb}
 set :linked_dirs, %w{log tmp public/system public/assets}
 
 set :keep_releases, 5
@@ -41,14 +41,15 @@ set(:config_files, %w(
 set :whenever_roles, -> { :app }
 
 namespace :deploy do
-  before :starting, 'rvm1:install:rvm'  # install/update RVM
-  before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
-  before :starting, 'install_bundler_gem' # install bundler gem
-  before 'rvm1:install:rvm', 'app:update_rvm_key'
+  # before :starting, 'app:dependencies'
+  # before :starting, 'rvm1:install:rvm'  # install/update RVM
+  # before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
+  # before :starting, 'install_bundler_gem' # install bundler gem
+  # before 'rvm1:install:rvm', 'app:update_rvm_key'
 
   after :publishing, 'deploy:restart'
   after :published, 'delayed_job:restart'
-  after :published, 'refresh_sitemap'
+  # after :published, 'refresh_sitemap'
 
   after :finishing, 'deploy:cleanup'
 end
@@ -73,6 +74,17 @@ namespace :app do
   task :update_rvm_key do
     on roles(:all) do
       execute :gpg, "--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"
+    end
+  end
+
+  task :dependencies do
+    on roles(:all) do
+      execute :sudo, "apt-get update --quiet"
+      execute :sudo, "apt-get --assume-yes install libpq-dev nodejs imagemagick --quiet"
+    end
+
+    on roles(:web) do
+      execute :sudo, "apt-get --assume-yes install nginx --quiet"
     end
   end
 end
