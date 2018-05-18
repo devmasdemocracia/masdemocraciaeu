@@ -7,7 +7,7 @@ pt-BR:
     show:
       change_credentials_link: Alterar meus dados pessoais
       email_on_comment_label: Notificar-me por email quando alguém comentar sobre
-        minhas propostas ou debates
+        minhas propostas
       email_on_comment_reply_label: Notificar-me por email quando alguém responder
         sobre meus comentários
       erase_account_link: Apagar minha conta
@@ -1648,6 +1648,7 @@ pt-BR:
       user_permission_debates: Participar nos debates
       user_permission_info: Com a sua conta você pode...
       user_permission_proposal: Criar novas propostas
+      user_permission_proposal_participate: Participar nos propostas
       user_permission_support_proposal: Apoiar propostas*
       user_permission_verify: Para executar todas as ações %{verify}
       user_permission_verify_info: "* Somente usuários no Censo de Madrid"

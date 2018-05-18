@@ -4,7 +4,6 @@ fr:
     show:
       change_credentials_link: Changer mes autorisations
       email_on_comment_label: Me notifier par email quand quelqu'un commente mes propositions
-        ou mes débats
       email_on_comment_reply_label: Me notifier par email quand quelqu'un répond à
         mes commentaires
       erase_account_link: Supprimer mon compte
@@ -1637,6 +1636,7 @@ fr:
       user_permission_debates: Participez aux débats !
       user_permission_info: Avec votre compte, vous pouvez...
       user_permission_proposal: Créer des propositions
+      user_permission_proposal_participate: Participez aux propositions
       user_permission_support_proposal: Soutenir des propositions
       user_permission_verify: Réaliser toutes ces actions %{verify}.
       user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur
