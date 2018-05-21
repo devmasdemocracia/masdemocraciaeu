@@ -11,9 +11,3 @@
     height: 25px;
   }
 }
-
-@media print, screen and (min-width: 40em) {
-  .auth-image {
-    min-height: 98rem;
-  }
-}
