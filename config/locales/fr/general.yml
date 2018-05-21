@@ -3,7 +3,7 @@ fr:
   account:
     show:
       change_credentials_link: Changer mes autorisations
-      email_on_comment_label: Me notifier par email quand quelqu'un commente mes propositions
+      email_on_comment_label: Me notifier par email quand quelqu'un commente mes propositions ou mes débats
       email_on_comment_reply_label: Me notifier par email quand quelqu'un répond à
         mes commentaires
       erase_account_link: Supprimer mon compte

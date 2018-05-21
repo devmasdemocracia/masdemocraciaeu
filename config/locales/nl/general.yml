@@ -3,7 +3,7 @@ nl:
   account:
     show:
       change_credentials_link: Pas mijn toegangsgegevens aan
-      email_on_comment_label: Stuur me een email als iemand op mijn voorstellen reageert
+      email_on_comment_label: Stuur me een email als iemand op mijn voorstellen of discussie reageert
       email_on_comment_reply_label: Stuur me een email wanneer iemand op mijn voorstellen reageert
       erase_account_link: Verwijder mijn account
       finish_verification: Maak verificatieproces af

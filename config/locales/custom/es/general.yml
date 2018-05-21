@@ -1,0 +1,4 @@
+es:
+  account:
+    show:
+      email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas
