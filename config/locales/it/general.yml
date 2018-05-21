@@ -746,6 +746,7 @@ it:
       user_permission_debates: ""
       user_permission_info: ""
       user_permission_proposal: ""
+      user_permission_proposal_participate: ""
       user_permission_support_proposal: ""
       user_permission_verify: ""
       user_permission_verify_info: ""

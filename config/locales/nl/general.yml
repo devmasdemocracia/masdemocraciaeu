@@ -692,6 +692,7 @@ nl:
       user_permission_debates: Deelnemen aan discussies
       user_permission_info: Met uw account kunt u..
       user_permission_proposal: Doe nieuwe voorstellen
+      user_permission_proposal_participate: Neem deel aan voorstellen
       user_permission_support_proposal: Steun voorstellen*
       user_permission_verify: Verifieer uw account om alles te kunnen.
       user_permission_verify_info: "* allen voor deelnemers uit de regio."

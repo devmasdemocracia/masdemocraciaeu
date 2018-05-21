@@ -786,6 +786,7 @@ val:
       user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots...
       user_permission_proposal: Crear noves propostes
+      user_permission_proposal_participate: Participar en propostes
       user_permission_support_proposal: Avalar propostes*
       user_permission_verify: Per a poder realitzar totes les accions verifica el teu compte.
       user_permission_verify_info: "* Sols usuaris empadronats."

@@ -1,0 +1,5 @@
+pt-BR:
+  account:
+    show:
+      email_on_comment_label: Notificar-me por email quando alguém comentar sobre
+        minhas propostas
