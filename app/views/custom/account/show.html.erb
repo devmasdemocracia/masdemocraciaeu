@@ -157,12 +157,10 @@
             <div>
               <span class="verify-account">
                 <% if current_user.level_three_verified? %>
-                  <ul>
-                    <li>
-                      <span class="icon-check"></span>
-                      <%= t("account.show.verified_account") %>
-                    </li>
-                  </ul>
+                  <p class="already-verified">
+                    <span class="icon-check"></span>
+                    <%= t("account.show.verified_account") %>
+                  </p>
                 <% elsif current_user.level_two_verified? %>
                   <%= link_to t("account.show.finish_verification"), verification_path, class: "button success" %>
                 <% else %>
