@@ -80,7 +80,7 @@ namespace :app do
   task :dependencies do
     on roles(:all) do
       execute :sudo, "apt-get update --quiet"
-      execute :sudo, "apt-get --assume-yes install libpq-dev nodejs imagemagick --quiet"
+      execute :sudo, "apt-get --assume-yes install libpq-dev nodejs imagemagick memcached --quiet"
     end
 
     on roles(:web) do
