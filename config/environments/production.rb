@@ -97,4 +97,4 @@ Rails.application.configure do
   }
 end
 
-Rails.logger = Le.new(Rails.application.secrets.logentries_api_key)
+Rails.logger = Le.new(Rails.application.secrets.logentries_api_key, local: true, ssl: true)
