@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
   respond_to :html
   helper_method :current_budget
 
-  def default_url_options(options)
+  def default_url_options(options = {})
     { protocol: :https }
   end
 
