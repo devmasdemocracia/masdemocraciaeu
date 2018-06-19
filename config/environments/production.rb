@@ -69,7 +69,7 @@ Rails.application.configure do
     domain:               Rails.application.secrets.smtp_domain,
     user_name:            Rails.application.secrets.smtp_user_name,
     password:             Rails.application.secrets.smtp_password,
-    authentication:       'plain',
+    authentication:       :login,
     enable_starttls_auto: true
   }
 
