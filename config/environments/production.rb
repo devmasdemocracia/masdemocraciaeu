@@ -63,6 +63,16 @@ Rails.application.configure do
   # Configure AWS SES (Simple Email Service)
   config.action_mailer.delivery_method = :smtp
 
+  config.action_mailer.smtp_settings = {
+    address:              Rails.application.secrets.smtp_host,
+    port:                 Rails.application.secrets.smtp_port,
+    domain:               Rails.application.secrets.smtp_domain,
+    user_name:            Rails.application.secrets.smtp_user_name,
+    password:             Rails.application.secrets.smtp_password,
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.  
   config.action_mailer.raise_delivery_errors = true
