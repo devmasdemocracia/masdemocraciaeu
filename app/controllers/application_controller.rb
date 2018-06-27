@@ -28,7 +28,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_budget
 
   def default_url_options(options = {})
-    { protocol: 'https'}.merge options if Rails.env.production?
+    if Rails.env.production?
+      { protocol: 'https'}.merge options
+    else
+      {}
+    end
   end
 
   private
