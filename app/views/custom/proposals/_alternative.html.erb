@@ -1,0 +1,11 @@
+<div id="alternative" class="alternative">
+  <h2><%= t("proposals.show.alternative.title") %>&nbsp;<span>(<%= proposal.children.count %>)</span></h2>
+
+  <% if proposal.has_children? %>
+    <ul class="no-bullet document-link">
+      <% proposal.children.each do |alternative_proposal| %>
+        <li><%= link_to alternative_proposal.title, proposal_path(alternative_proposal), class: "proposal-link" %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

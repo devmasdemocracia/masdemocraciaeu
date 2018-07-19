@@ -27,6 +27,7 @@ class Proposal < ActiveRecord::Base
 
   RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
 
+  has_ancestry touch: true
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable, dependent: :destroy

@@ -13,9 +13,9 @@
         <%= t("proposals.new.more_info")%>
       <% end %>
     </div>
-    <% if @original_proposal.present? %>
+    <% if @proposal.parent.present? %>
       <div data-alert class="callout warning">
-        <%= t "proposals.new.suggest_warning_html", title: @original_proposal.title, link: proposal_path(@original_proposal) %>
+        <%= t "proposals.new.suggest_warning_html", title: @proposal.parent.title, link: proposal_path(@proposal.parent) %>
       </div>
     <% end %>
     <%= render "proposals/form", form_url: proposals_url %>

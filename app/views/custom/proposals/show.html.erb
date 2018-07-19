@@ -54,6 +54,12 @@
 
         </div>
 
+        <% if @proposal.parent.present? %>
+          <div id="alternative-alert" data-alert class="callout warning">
+            <%= t "proposals.show.suggest_warning_html", title: @proposal.parent.title, link: proposal_path(@proposal.parent) %>
+          </div>
+        <% end %>
+
         <%= render_image(@proposal.image, :large, true) if @proposal.image.present? %>
 
         <br>
@@ -128,13 +134,15 @@
           </div>
         <% end %>
 
+        <%= render 'shared/tags', taggable: @proposal %>
+
         <% if feature?(:allow_attached_documents) %>
           <%= render 'documents/documents',
                       documents: @proposal.documents,
                       max_documents_allowed: Proposal.max_documents_allowed %>
         <% end %>
 
-        <%= render 'shared/tags', taggable: @proposal %>
+        <%= render 'proposals/alternative', proposal: @proposal %>
 
         <%= render 'shared/geozone', geozonable: @proposal if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
 

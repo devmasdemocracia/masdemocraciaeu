@@ -63,6 +63,9 @@ es:
       act: Actúa
       suggest_link: Sugiere cambios a esta propuesta
       suggest_text: Sugiere cambios para esta propuesta a través del sistema de comentarios.
+      suggest_warning_html: "Estás viendo una propuesta alternativa a: <strong><a href=\"%{link}\">%{title}</a></strong>"
+      alternative:
+        title: Propuestas alternativas
     retire_form:
       warning: "Si sigues adelante tu propuesta dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir visible."
       retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe ser visible
