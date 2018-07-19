@@ -121,6 +121,19 @@ feature 'Masdemocraciaeuropa proposals' do
       expect(page).not_to have_selector "#advanced_search_official_level"
     end
 
+    scenario "Should display original proposal link inside complementary proposals", :js do
+      proposal = create(:proposal)
+      complementary_proposal = create(:proposal, parent: proposal)
+      visit proposals_path
+
+      within "#proposal_#{proposal.id}" do
+        expect(page).not_to have_link complementary_proposal.title
+      end
+      within "#proposal_#{complementary_proposal.id}" do
+        expect(page).to have_link proposal.title
+      end
+    end
+
   end
 
   describe "Show" do

@@ -3,7 +3,7 @@
   <div class="small-12 medium-9 column">
     <%= back_link_to %>
 
-    <% if @original_proposal.present? %>
+    <% if @proposal.parent.present? %>
       <h1><%= t("proposals.new.start_complementary") %></h1>
     <% else %>
       <h1><%= t("proposals.new.start_new") %></h1>

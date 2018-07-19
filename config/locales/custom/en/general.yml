@@ -22,6 +22,8 @@ en:
   social:
     linkedin: "%{org} LinkedIn"
   proposals:
+    index:
+      alternative_html: "<strong>Complementary proposal of: <br class=\"show-for-small-only\" /><a href=\"%{link}\">%{title}</a></strong>"
     form:
       proposal_feasible_explanation: Is your proposal actionable?
       proposal_feasible_explanation_note_html: Explain briefly what does it take to have your proposal implemented, including if possible an even rough estimation of the cost of it. <br>(max 1700 characters ~ 300 words)
@@ -52,6 +54,9 @@ en:
       suggest_warning_html: "You are creating a complementary proposal of: <strong><a href=\"%{link}\">%{title}</a></strong>"
       start_complementary: "Create a complementary proposal"
     edit:
+      form:
+        submit_button_custom: Save changes
+    update:
       form:
         submit_button_custom: Save changes
     show:

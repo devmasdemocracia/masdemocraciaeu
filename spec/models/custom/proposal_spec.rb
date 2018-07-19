@@ -17,6 +17,10 @@ describe Proposal do
     expect(proposal).to be_valid
   end
 
+  it "is valid without ancestry" do
+    expect(proposal).to be_valid
+  end
+
   context "when Setting['org_name'] is 'MASDEMOCRACIAEUROPA'" do
 
     before { Setting['org_name'] = 'MASDEMOCRACIAEUROPA' }

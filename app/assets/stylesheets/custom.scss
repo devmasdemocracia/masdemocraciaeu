@@ -384,7 +384,7 @@ body.auth-page{
 
   ul {
     padding-left: 20px;
-    
+
     li {
       padding-top: $line-height / 2;
       list-style-type: disc;
@@ -394,4 +394,9 @@ body.auth-page{
       }
     }
   }
+}
+
+.alternative-label{
+  background: #fcf8e3;
+  color: black;
 }
