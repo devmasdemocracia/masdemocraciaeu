@@ -3,18 +3,31 @@
     <div class="footer-sections small-12 column">
       <div class="small-12 medium-4 column border-b">
         <p><strong><%= t("layouts.footer.project_text") %></strong></p>
-        <%= image_tag("logo_es_global.png", alt: "") %>
+        <%= link_to "https://www.esglobal.org/", target: :blank do %>
+          <%= image_tag "logo_es_global.png",
+                        alt: "Esglobal: Política, economía e ideas sobre el mundo en español" %>
+        <% end %>
       </div>
       <div class="small-12 medium-4 column border-b">
         <p><strong><%= t("layouts.footer.colaboration_text") %></strong></p>
-        <div style="margin: 0 auto; padding-top: 0px; display: inline-block;">
-          <%= image_tag("logo_european_council.png", alt: "", style: "float: left;") %>
-          <%= image_tag("http://www.rockandror.com/assets/logo-signature-email.png", alt: "Rock&RoR Agile web development studio", style: "width: 79px;float: left;") %>
+        <div class="collaborator-logos">
+          <%= link_to "https://www.ecfr.eu/madrid", target: :blank do %>
+            <%= image_tag "logo_european_council.png",
+                          alt: "Página de la oficina de Madrid de ECFR",
+                          class: 'collaborator-logo' %>
+          <% end %>
+          <%= link_to "http://www.rockandror.com", target: :blank do %>
+            <%= image_tag "http://www.rockandror.com/assets/logo-signature-email.png",
+                          alt: "Rock&RoR Agile web development studio",
+                          class: 'collaborator-logo rockandror' %>
+          <% end %>
         </div>
       </div>
       <div class="small-12 medium-4 column">
         <p><strong><%= t("layouts.footer.support_text") %></strong></p>
-        <%= image_tag("logo_gob_esapna.png", alt: "") %>
+        <%= link_to "http://www.exteriores.gob.es/", target: :blank do %>
+          <%= image_tag("logo_gob_esapna.png", alt: "Ministerio de Asuntos Exteriores y de Cooperación") %>
+        <% end %>
       </div>
     </div>
   </div>
