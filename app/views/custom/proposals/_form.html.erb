@@ -1,6 +1,8 @@
 <%= form_for(@proposal, url: form_url) do |f| %>
   <%= render 'shared/errors', resource: @proposal %>
 
+  <%= f.hidden_field :parent_id %>
+
   <div class="row">
     <div class="small-12 column">
       <%= f.label :title, t("proposals.form.proposal_title") %>

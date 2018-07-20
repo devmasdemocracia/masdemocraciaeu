@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180704132918) do
+ActiveRecord::Schema.define(version: 20180719093029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -903,8 +903,10 @@ ActiveRecord::Schema.define(version: 20180704132918) do
     t.text     "objective"
     t.text     "feasible_explanation"
     t.text     "impact_description"
+    t.string   "ancestry"
   end
 
+  add_index "proposals", ["ancestry"], name: "index_proposals_on_ancestry", using: :btree
   add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree

@@ -22,6 +22,8 @@ en:
   social:
     linkedin: "%{org} LinkedIn"
   proposals:
+    index:
+      alternative_html: "<strong>Complementary proposal of: <br class=\"show-for-small-only\" /><a href=\"%{link}\">%{title}</a></strong>"
     form:
       proposal_feasible_explanation: Is your proposal actionable?
       proposal_feasible_explanation_note_html: Explain briefly what does it take to have your proposal implemented, including if possible an even rough estimation of the cost of it. <br>(max 1700 characters ~ 300 words)
@@ -54,6 +56,9 @@ en:
     edit:
       form:
         submit_button_custom: Save changes
+    update:
+      form:
+        submit_button_custom: Save changes
     show:
       proposal_objective: Proposal precise Objective/s
       proposal_feasible_explanation: Proposal feasilbility
@@ -62,6 +67,9 @@ en:
       act: Act
       suggest_link: Suggest changes
       suggest_text: Suggest changes to this proposal through the comments system.
+      suggest_warning_html: "You are viewing a complementary proposal of: <strong><a href=\"%{link}\">%{title}</a></strong>"
+      alternative:
+        title: Complementary proposals
     retire_form:
       warning: "If you retire the proposal it will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be detectable"
       retired_explanation_placeholder: Explain shortly why you think this proposal should not be detectable

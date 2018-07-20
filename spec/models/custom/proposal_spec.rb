@@ -17,6 +17,10 @@ describe Proposal do
     expect(proposal).to be_valid
   end
 
+  it "is valid without ancestry" do
+    expect(proposal).to be_valid
+  end
+
   context "when Setting['org_name'] is 'MASDEMOCRACIAEUROPA'" do
 
     before { Setting['org_name'] = 'MASDEMOCRACIAEUROPA' }
@@ -70,7 +74,7 @@ describe Proposal do
     end
 
     it "is not valid when title is longer than 120 characters" do
-      proposal.title = "a" * 120
+      proposal.title = "a" * 121
 
       expect(proposal).not_to be_valid
     end

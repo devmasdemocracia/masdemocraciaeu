@@ -121,6 +121,19 @@ feature 'Masdemocraciaeuropa proposals' do
       expect(page).not_to have_selector "#advanced_search_official_level"
     end
 
+    scenario "Should display original proposal link inside complementary proposals", :js do
+      proposal = create(:proposal)
+      complementary_proposal = create(:proposal, parent: proposal)
+      visit proposals_path
+
+      within "#proposal_#{proposal.id}" do
+        expect(page).not_to have_link complementary_proposal.title
+      end
+      within "#proposal_#{complementary_proposal.id}" do
+        expect(page).to have_link proposal.title
+      end
+    end
+
   end
 
   describe "Show" do
@@ -193,6 +206,40 @@ feature 'Masdemocraciaeuropa proposals' do
       end
     end
 
+    scenario "Should display complementary proposals at parent proposal" do
+      proposal = create(:proposal, title: "Original proposal title")
+      complementary_proposal = create(:proposal, title: "Complementary proposal title", parent: proposal)
+      visit proposal_path(proposal)
+
+      within "#alternative" do
+        expect(page).to have_link complementary_proposal.title
+      end
+    end
+
+    scenario "Should display original proposals at complementary (children) proposals" do
+      proposal = create(:proposal, title: "Original proposal title")
+      complementary_proposal = create(:proposal, title: "Complementary proposal title", parent: proposal)
+      visit proposal_path(complementary_proposal)
+
+      within "#alternative-alert" do
+        expect(page).to have_link 'Original proposal title'
+      end
+    end
+
+    scenario "Should allow to create complementary proposal from any proposal" do
+      proposal = create(:proposal, title: "Original proposal title")
+      visit proposal_path(proposal)
+
+      click_on "Create complementary proposal"
+      fill_proposal_form
+      check 'proposal_terms_of_service'
+      click_button 'Send your proposal'
+      expect(page).to have_content 'Proposal created successfully.'
+      click_on 'Not now, go to my proposal'
+
+      expect(page).to have_content "You are viewing a complementary proposal of: #{proposal.title}"
+    end
+
   end
 
   describe "Create" do
@@ -201,14 +248,7 @@ feature 'Masdemocraciaeuropa proposals' do
       login_as(author)
       visit new_proposal_path
 
-      fill_in 'proposal_title', with: 'Help refugees'
-      fill_in 'proposal_objective', with: 'To minimize refugees at Europe'
-      fill_in 'proposal_impact_description', with: 'This should affect to ..'
-      fill_in 'proposal_feasible_explanation', with: 'This could be done if all of we ...'
-      fill_in 'proposal_description', with: 'This is very important because...'
-      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-      fill_in 'proposal_video_url', with: 'https://www.youtube.com/watch?v=yPQfcG-eimk'
-      fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
+      fill_proposal_form
       check 'proposal_terms_of_service'
 
       click_button 'Send your proposal'
@@ -240,4 +280,15 @@ feature 'Masdemocraciaeuropa proposals' do
       expect(page).to have_content "Proposal updated successfully."
     end
   end
+end
+
+def fill_proposal_form
+  fill_in 'proposal_title', with: 'Help refugees'
+  fill_in 'proposal_objective', with: 'To minimize refugees at Europe'
+  fill_in 'proposal_impact_description', with: 'This should affect to ..'
+  fill_in 'proposal_feasible_explanation', with: 'This could be done if all of we ...'
+  fill_in 'proposal_description', with: 'This is very important because...'
+  fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+  fill_in 'proposal_video_url', with: 'https://www.youtube.com/watch?v=yPQfcG-eimk'
+  fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
 end

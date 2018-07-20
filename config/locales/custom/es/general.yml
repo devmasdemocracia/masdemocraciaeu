@@ -22,6 +22,8 @@ es:
   social:
     linkedin: "LinkedIn de %{org}"
   proposals:
+    index:
+      alternative_html: "<strong>Propuesta alternativa a: <br class=\"show-for-small-only\" /><a href=\"%{link}\">%{title}</a></strong>"
     form:
       proposal_feasible_explanation: ¿Es factible tu propuesta?
       proposal_feasible_explanation_note_html: Explica brevemente cómo puede llevarse la propuesta a la práctica, incluyendo si es posible una estimación, aún en términos generales, de su coste. <br>(max 1700 caracteres ~ 300 palabras)
@@ -55,6 +57,9 @@ es:
     edit:
       form:
         submit_button_custom: Guardar cambios
+    update:
+      form:
+        submit_button_custom: Guardar cambios
     show:
       proposal_objective: Objetivo/s concreto/s de la propuesta
       proposal_feasible_explanation: Aplicabilidad de la propuesta
@@ -63,6 +68,9 @@ es:
       act: Actúa
       suggest_link: Sugiere cambios a esta propuesta
       suggest_text: Sugiere cambios para esta propuesta a través del sistema de comentarios.
+      suggest_warning_html: "Estás viendo una propuesta alternativa a: <strong><a href=\"%{link}\">%{title}</a></strong>"
+      alternative:
+        title: Propuestas alternativas
     retire_form:
       warning: "Si sigues adelante tu propuesta dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir visible."
       retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe ser visible

@@ -374,3 +374,33 @@ body.auth-page{
   font-size: 16px;
   border-bottom: solid 1px #dee0e3;
 }
+
+.alternative {
+
+  h2 {
+    font-size: rem-calc(24);
+
+    span {
+      color: #4f4f4f;
+      font-weight: normal;
+    }
+  }
+
+  ul {
+    padding-left: 20px;
+
+    li {
+      padding-top: $line-height / 2;
+      list-style-type: disc;
+
+      &:not(:first-child) {
+        border-top: 1px solid $highlight;
+      }
+    }
+  }
+}
+
+.alternative-label{
+  background: #fcf8e3;
+  color: black;
+}

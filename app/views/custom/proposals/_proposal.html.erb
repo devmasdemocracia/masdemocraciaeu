@@ -54,6 +54,15 @@
                 </span>
               <% end %>
             </p>
+
+            <% if setting['org_name'] == 'MASDEMOCRACIAEUROPA' && proposal.parent.present? %>
+              <p>
+                <span class="label round alternative-label">
+                  <%= t "proposals.index.alternative_html", title: proposal.parent.title, link: proposal_path(proposal.parent) %>
+                </span>
+              </p>
+            <% end %>
+
             <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
               <div class="proposal-description">
                 <p><%= proposal.summary %></p>
