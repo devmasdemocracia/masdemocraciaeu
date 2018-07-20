@@ -1,3 +1,7 @@
+<% if Setting["meta_title"].present? %>
+  <% provide :title do %><%= Setting["meta_title"] %><% end %>
+<% end %>
+
 <h2><%= t("welcome.welcome.title") %></h2>
 
 <div class="user-permissions">
