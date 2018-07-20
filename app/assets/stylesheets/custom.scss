@@ -404,3 +404,17 @@ body.auth-page{
   background: #fcf8e3;
   color: black;
 }
+
+.collaborator-logos{
+  margin: 0 auto;
+  padding-top: 0px !important;
+  display: inline-block;
+
+  .collaborator-logo{
+    float: left;
+
+    &.rockandror{
+      width: 79px;
+    }
+  }
+}
