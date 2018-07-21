@@ -11,6 +11,7 @@ SitemapGenerator::Sitemap.default_host = Setting["url"]
 # sitemap generator
 SitemapGenerator::Sitemap.create do
   pages = ["aviso-legal", "de-que-se-trata", "accesibility", "politica-de-privacidad", "proposal_guide", "terminos-y-condiciones"]
+  pages << 'general_terms' if Setting['org_name'] != "MASDEMOCRACIAEUROPA"
   pages.each do |page|
     add page_path(id: page)
   end
