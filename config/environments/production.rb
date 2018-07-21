@@ -42,7 +42,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  config.force_ssl = false
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -61,7 +61,17 @@ Rails.application.configure do
   # config.action_controller.asset_host = 'http://assets.example.com'
 
   # Configure AWS SES (Simple Email Service)
-  config.action_mailer.delivery_method = :ses
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address:              Rails.application.secrets.smtp_host,
+    port:                 Rails.application.secrets.smtp_port,
+    domain:               Rails.application.secrets.smtp_domain,
+    user_name:            Rails.application.secrets.smtp_user_name,
+    password:             Rails.application.secrets.smtp_password,
+    authentication:       :login,
+    enable_starttls_auto: true
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.  

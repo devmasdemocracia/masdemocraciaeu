@@ -9,11 +9,11 @@ end
 set :rails_env, fetch(:stage)
 set :rvm1_ruby_version, '2.3.2'
 
-set :application, 'consul'
+set :application, 'masdemocraciaeu'
 set :full_app_name, deploysecret(:full_app_name)
 
 set :server_name, deploysecret(:server_name)
-set :repo_url, 'https://github.com/consul/consul.git'
+set :repo_url, 'https://github.com/devmasdemocracia/masdemocraciaeu'
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
@@ -21,7 +21,7 @@ set :log_level, :info
 set :pty, true
 set :use_sudo, false
 
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml config/unicorn.rb}
 set :linked_dirs, %w{log tmp public/system public/assets}
 
 set :keep_releases, 5
@@ -41,13 +41,15 @@ set(:config_files, %w(
 set :whenever_roles, -> { :app }
 
 namespace :deploy do
-  before :starting, 'rvm1:install:rvm'  # install/update RVM
-  before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
-  before :starting, 'install_bundler_gem' # install bundler gem
+  # before :starting, 'app:dependencies'
+  # before :starting, 'rvm1:install:rvm'  # install/update RVM
+  # before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
+  # before :starting, 'install_bundler_gem' # install bundler gem
+  # before 'rvm1:install:rvm', 'app:update_rvm_key'
 
   after :publishing, 'deploy:restart'
   after :published, 'delayed_job:restart'
-  after :published, 'refresh_sitemap'
+  # after :published, 'refresh_sitemap'
 
   after :finishing, 'deploy:cleanup'
 end
@@ -64,6 +66,25 @@ task :refresh_sitemap do
       with rails_env: fetch(:rails_env) do
         execute :rake, 'sitemap:refresh:no_ping'
       end
+    end
+  end
+end
+
+namespace :app do
+  task :update_rvm_key do
+    on roles(:all) do
+      execute :gpg, "--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"
+    end
+  end
+
+  task :dependencies do
+    on roles(:all) do
+      execute :sudo, "apt-get update --quiet"
+      execute :sudo, "apt-get --assume-yes install libpq-dev nodejs imagemagick memcached --quiet"
+    end
+
+    on roles(:web) do
+      execute :sudo, "apt-get --assume-yes install nginx --quiet"
     end
   end
 end
