@@ -21,9 +21,9 @@ describe Proposal do
     expect(proposal).to be_valid
   end
 
-  context "when Setting['org_name'] is 'MASDEMOCRACIAEUROPA'" do
+  context "when Setting['org_name'] is 'Más Democracia en Europa'" do
 
-    before { Setting['org_name'] = 'MASDEMOCRACIAEUROPA' }
+    before { Setting['org_name'] = 'Más Democracia en Europa' }
 
     it "is valid without question" do
       proposal.question = nil

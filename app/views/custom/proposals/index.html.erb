@@ -89,7 +89,7 @@
         <% end %>
         <%= paginate @proposals %>
 
-        <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+        <% if setting['org_name'] != "Más Democracia en Europa" %>
           <% unless @search_terms || @advanced_search_terms || @tag_filter %>
             <div id="section_help" class="margin" data-magellan-target="section_help">
               <p class="lead">
@@ -115,8 +115,8 @@
         <% if params[:retired].blank? %>
           <%= render 'categories' %>
           <%= render "shared/tag_cloud", taggable: 'proposal' %>
-          <%= render 'geozones' if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
-          <%= render 'popular' if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+          <%= render 'geozones' if setting['org_name'] != 'Más Democracia en Europa' %>
+          <%= render 'popular' if setting['org_name'] != "Más Democracia en Europa" %>
         <% end %>
         <%= render 'retired' %>
       </aside>

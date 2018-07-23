@@ -15,7 +15,7 @@
 
     <%= f.invisible_captcha :subtitle %>
 
-    <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+    <% if setting['org_name'] != 'Más Democracia en Europa' %>
       <div class="small-12 column">
         <%= f.label :question, t("proposals.form.proposal_question") %>
         <p class="help-text" id="question-help-text">
@@ -93,7 +93,7 @@
       </div>
     <% end %>
 
-    <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+    <% if setting['org_name'] != 'Más Democracia en Europa' %>
       <div class="small-12 medium-6 column">
         <%= f.label :geozone_id,  t("proposals.form.geozone") %>
         <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
@@ -158,7 +158,7 @@
     </div>
 
     <div class="actions small-12 column">
-      <% if setting['org_name'] == 'MASDEMOCRACIAEUROPA' %>
+      <% if setting['org_name'] == 'Más Democracia en Europa' %>
         <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button_custom")) %>
       <% else %>
         <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button")) %>

@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'Masdemocraciaeuropa proposals' do
+feature 'Más Democracia en Europa proposals' do
 
   background do
-    Setting["org_name"] = 'MASDEMOCRACIAEUROPA'
+    Setting["org_name"] = 'Más Democracia en Europa'
     Setting["feature.user.skip_verification"] = "true"
   end
 
@@ -80,7 +80,7 @@ feature 'Masdemocraciaeuropa proposals' do
       expect(page).not_to have_selector "#geozone"
     end
 
-    scenario "Dont display popular section on sidebar when org_name is MASDEMOCRACIAEUROPA" do
+    scenario "Dont display popular section on sidebar when org_name is Más Democracia en Europa" do
       proposal = create(:proposal)
 
       visit proposals_path
@@ -89,7 +89,7 @@ feature 'Masdemocraciaeuropa proposals' do
       expect(page).not_to have_content I18n.t("proposals.index.top")
     end
 
-    scenario "Dont display votes section on proposal partial when org_name is MASDEMOCRACIAEUROPA" do
+    scenario "Dont display votes section on proposal partial when org_name is Más Democracia en Europa" do
       proposal = create(:proposal)
 
       visit proposals_path
@@ -97,7 +97,7 @@ feature 'Masdemocraciaeuropa proposals' do
       expect(page).not_to have_css "#proposal_#{proposal.id}_votes"
     end
 
-    scenario "Dont display featured proposals partial when org_name is MASDEMOCRACIAEUROPA" do
+    scenario "Dont display featured proposals partial when org_name is Más Democracia en Europa" do
       proposal = create(:proposal)
 
       visit proposals_path
@@ -105,7 +105,7 @@ feature 'Masdemocraciaeuropa proposals' do
       expect(page).not_to have_css "#featured-proposals"
     end
 
-    scenario "Dont display highest_rated order when org_name is MASDEMOCRACIAEUROPA" do
+    scenario "Dont display highest_rated order when org_name is Más Democracia en Europa" do
       proposal = create(:proposal)
 
       visit proposals_path
@@ -113,7 +113,7 @@ feature 'Masdemocraciaeuropa proposals' do
       expect(page).not_to have_content "highest rated"
     end
 
-    scenario "Dont display advanced_search_official_level select when org_name is MASDEMOCRACIAEUROPA", :js do
+    scenario "Dont display advanced_search_official_level select when org_name is Más Democracia en Europa", :js do
       visit proposals_path
 
       find("#js-advanced-search-title").click
@@ -138,7 +138,7 @@ feature 'Masdemocraciaeuropa proposals' do
 
   describe "Show" do
 
-    scenario "Dont display votes section on proposal partial when org_name is MASDEMOCRACIAEUROPA" do
+    scenario "Dont display votes section on proposal partial when org_name is Más Democracia en Europa" do
       proposal = create(:proposal)
 
       visit proposal_path(proposal)

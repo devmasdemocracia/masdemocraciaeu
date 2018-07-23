@@ -14,7 +14,7 @@
                            placeholder: t("shared.advanced_search.general_placeholder") %>
       </div>
 
-      <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+      <% if setting['org_name'] != 'Más Democracia en Europa' %>
         <div class="small-12 large-3 column">
           <label for="advanced_search_official_level"><%= t("shared.advanced_search.author_type") %></label>
           <%= select_tag('advanced_search[official_level]', official_level_search_options,

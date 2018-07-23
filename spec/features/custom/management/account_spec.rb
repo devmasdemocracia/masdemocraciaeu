@@ -3,11 +3,11 @@ require 'rails_helper'
 feature 'Account' do
 
   background do
-    Setting["org_name"] = 'MASDEMOCRACIAEUROPA'
+    Setting["org_name"] = 'Más Democracia en Europa'
     login_as_manager
   end
 
-  scenario "Display custom menu when org_name is MASDEMOCRACIAEUROPA" do
+  scenario "Display custom menu when org_name is Más Democracia en Europa" do
     user = create(:user)
     login_managed_user(user)
 

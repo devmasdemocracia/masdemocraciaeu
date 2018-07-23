@@ -3,7 +3,7 @@ require 'rails_helper'
 feature "Welcome screen" do
 
   before do
-    Setting["org_name"] = 'MASDEMOCRACIAEUROPA'
+    Setting["org_name"] = 'Más Democracia en Europa'
   end
 
   scenario 'a regular users sees it the first time he logs in, with all options active

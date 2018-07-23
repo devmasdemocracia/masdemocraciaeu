@@ -15,7 +15,7 @@ class ProposalsController < ApplicationController
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
   has_orders ->(c) { Proposal.proposals_orders(c.current_user) }, only: :index
-  if Setting['org_name'] != "MASDEMOCRACIAEUROPA"
+  if Setting['org_name'] != "Más Democracia en Europa"
     has_orders %w{most_voted newest oldest}, only: :show
   else
     has_orders %w{newest oldest}, only: :show
@@ -51,7 +51,7 @@ class ProposalsController < ApplicationController
     discard_archived
     load_retired
     load_successful_proposals
-    if Setting['org_name'] != "MASDEMOCRACIAEUROPA"
+    if Setting['org_name'] != "Más Democracia en Europa"
       load_featured unless @proposal_successful_exists
     end
   end

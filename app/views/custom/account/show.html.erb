@@ -123,7 +123,7 @@
           <ul>
             <li><span class="icon-check"></span>&nbsp;<%= t("welcome.welcome.user_permission_proposal_participate") %></li>
             <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
-            <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+            <% if setting['org_name'] != "Más Democracia en Europa" %>
 
               <li>
                 <% if current_user.level_two_or_three_verified? %>
@@ -144,7 +144,7 @@
             <% end %>
           </ul>
 
-          <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+          <% if setting['org_name'] != "Más Democracia en Europa" %>
             <p>
               <span><%= t("account.show.user_permission_verify_info") %></span>
             </p>

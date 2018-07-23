@@ -8,7 +8,7 @@
       <h2><%= @custom_page.subtitle%></h2>
     <% end %>
 
-    <% if setting['org_name'] == 'MASDEMOCRACIAEUROPA' %>
+    <% if setting['org_name'] == 'Más Democracia en Europa' %>
       <%= safe_html_with_links @custom_page.content %>
     <% else %>
       <%= text_with_links @custom_page.content %>

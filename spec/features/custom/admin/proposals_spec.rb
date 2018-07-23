@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Proposals' do
 
   background do
-    Setting["org_name"] = 'MASDEMOCRACIAEUROPA'
+    Setting["org_name"] = 'Más Democracia en Europa'
     admin = create(:administrator)
     login_as(admin.user)
   end

@@ -68,7 +68,7 @@
           <strong><%= @proposal.code %></strong>
         </p>
 
-        <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+        <% if setting['org_name'] != 'Más Democracia en Europa' %>
           <blockquote><%= @proposal.summary %></blockquote>
         <% end %>
 
@@ -82,7 +82,7 @@
 
         <%= safe_html_with_links @proposal.description %>
 
-        <% if setting['org_name'] == 'MASDEMOCRACIAEUROPA' %>
+        <% if setting['org_name'] == 'Más Democracia en Europa' %>
           <h2 class="small-subtitle"><%= t("proposals.show.proposal_objective") %></h2>
           <%= safe_html_with_links @proposal.objective %>
 
@@ -120,7 +120,7 @@
 
         <% end %>
 
-        <% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+        <% if setting['org_name'] != 'Más Democracia en Europa' %>
           <h4><%= @proposal.question %></h4>
         <% end %>
 
@@ -144,7 +144,7 @@
 
         <%= render 'proposals/alternative', proposal: @proposal %>
 
-        <%= render 'shared/geozone', geozonable: @proposal if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+        <%= render 'shared/geozone', geozonable: @proposal if setting['org_name'] != 'Más Democracia en Europa' %>
 
         <%= render 'relationable/related_content', relationable: @proposal %>
 
@@ -201,7 +201,7 @@
           </div>
         <% end %>
 
-        <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+        <% if setting['org_name'] != "Más Democracia en Europa" %>
           <div class="sidebar-divider"></div>
           <h2><%= t("votes.supports") %></h2>
           <div id="<%= dom_id(@proposal) %>_votes">

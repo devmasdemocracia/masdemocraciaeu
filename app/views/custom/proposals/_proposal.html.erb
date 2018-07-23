@@ -55,7 +55,7 @@
               <% end %>
             </p>
 
-            <% if setting['org_name'] == 'MASDEMOCRACIAEUROPA' && proposal.parent.present? %>
+            <% if setting['org_name'] == 'Más Democracia en Europa' && proposal.parent.present? %>
               <p>
                 <span class="label round alternative-label">
                   <%= t "proposals.index.alternative_html", title: proposal.parent.title, link: proposal_path(proposal.parent) %>
@@ -63,7 +63,7 @@
               </p>
             <% end %>
 
-            <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+            <% if setting['org_name'] != "Más Democracia en Europa" %>
               <div class="proposal-description">
                 <p><%= proposal.summary %></p>
                 <div class="truncate"></div>
@@ -79,7 +79,7 @@
         </div>
       </div>
 
-      <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+      <% if setting['org_name'] != "Más Democracia en Europa" %>
         <div id="<%= dom_id(proposal) %>_votes"
              class="small-12 medium-3 column supports-container"
              <%= 'data-equalizer-watch' if feature?(:allow_images) && proposal.image.present? %>>

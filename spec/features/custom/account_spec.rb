@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Account' do
 
   background do
-    Setting["org_name"] = 'MASDEMOCRACIAEUROPA'
+    Setting["org_name"] = 'Más Democracia en Europa'
     @user = create(:user, username: "Manuela Colau")
     login_as(@user)
   end
