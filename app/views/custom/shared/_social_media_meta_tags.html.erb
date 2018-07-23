@@ -5,7 +5,7 @@
 <meta name="twitter:site" content="<%= setting['twitter_handle'] %>"/>
 <meta name="twitter:title" content="<%= local_assigns[:social_title] || setting['meta_title'] %>"/>
 <meta name="twitter:description" content="<%= description %>"/>
-<% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+<% if setting['org_name'] != 'Más Democracia en Europa' %>
   <meta name="twitter:image" content="<%= root_url + (local_assigns[:twitter_image_url] || 'social_media_icon_twitter.png') %>"/>
 <% else %>
   <meta name="twitter:image" content="<%= root_url + (local_assigns[:twitter_image_url] || 'logo_mas_democracia_eu.png') %>"/>
@@ -20,7 +20,7 @@
 <% end %>
 <meta property="og:type" content="article"/>
 <meta id="ogurl" property="og:url" content="<%= social_url %>"/>
-<% if setting['org_name'] != 'MASDEMOCRACIAEUROPA' %>
+<% if setting['org_name'] != 'Más Democracia en Europa' %>
   <meta id="ogimage" property="og:image" content="<%= root_url + (local_assigns[:og_image_url] || 'social_media_icon.png') %>"/>
 <% else %>
   <meta id="ogimage" property="og:image" content="<%= root_url + (local_assigns[:og_image_url] || 'logo_mas_democracia_eu.png') %>"/>
