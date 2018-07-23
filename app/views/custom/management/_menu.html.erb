@@ -1,6 +1,6 @@
 <div class="admin-sidebar">
   <ul id="admin_menu" data-accordion-menu data-multi-open="false">
-    <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+    <% if setting['org_name'] != "Más Democracia en Europa" %>
 
       <li <%= "class=active" if controller_name == "document_verifications" ||
                                 controller_name == "email_verifications" ||
@@ -29,7 +29,7 @@
       </ul>
     </li>
 
-    <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+    <% if setting['org_name'] != "Más Democracia en Europa" %>
 
       <li <%= "class=active" if controller_name == "proposals" && action_name == "new" %>>
         <%= link_to new_management_proposal_path do %>
@@ -40,7 +40,7 @@
       
     <% end %>
 
-    <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+    <% if setting['org_name'] != "Más Democracia en Europa" %>
 
       <li <%= "class=active" if controller_name == "proposals" && action_name == "index"  %>>
         <%= link_to management_proposals_path do %>
@@ -51,7 +51,7 @@
 
     <% end %>
 
-    <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+    <% if setting['org_name'] != "Más Democracia en Europa" %>
 
       <li <%= "class=active" if controller_name == "spending_proposals" && action_name == "new" %>>
         <%= link_to new_management_spending_proposal_path do %>
@@ -102,7 +102,7 @@
       <% end %>
     </li>
 
-    <% if setting['org_name'] != "MASDEMOCRACIAEUROPA" %>
+    <% if setting['org_name'] != "Más Democracia en Europa" %>
 
       <li <%= "class=active" if controller_name == "spending_proposals" && action_name == "print" %>>
         <%= link_to print_management_spending_proposals_path do %>

@@ -11,6 +11,6 @@ fr:
       open_gov: Más Democracia En Europa
     footer:
       participation_text: Participe à des sujets d'intérêt pour la Communauté économique européenne.
-      copyright: MasDemocraciaEnEuropa, %{year}
+      copyright: Más Democracia en Europa, %{year}
   social:
     linkedin: "%{org} LinkedIn"

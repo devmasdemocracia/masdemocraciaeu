@@ -34,21 +34,21 @@ class Proposal < ActiveRecord::Base
   has_many :proposal_notifications, dependent: :destroy
 
   validates :title, presence: true
-  validates :description, presence: true, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
-  validates :question, presence: true, if: -> { Setting['org_name'] != "MASDEMOCRACIAEUROPA" }
-  validates :objective, presence: true, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
-  validates :feasible_explanation, presence: true, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
-  validates :impact_description, presence: true, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
-  validates :summary, presence: true, if: -> { Setting['org_name'] != "MASDEMOCRACIAEUROPA" }
+  validates :description, presence: true, if: -> { Setting['org_name'] == "Más Democracia en Europa" }
+  validates :question, presence: true, if: -> { Setting['org_name'] != "Más Democracia en Europa" }
+  validates :objective, presence: true, if: -> { Setting['org_name'] == "Más Democracia en Europa" }
+  validates :feasible_explanation, presence: true, if: -> { Setting['org_name'] == "Más Democracia en Europa" }
+  validates :impact_description, presence: true, if: -> { Setting['org_name'] == "Más Democracia en Europa" }
+  validates :summary, presence: true, if: -> { Setting['org_name'] != "Más Democracia en Europa" }
   validates :author, presence: true
   validates :responsible_name, presence: true, :unless => :skip_verification?
 
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }
-  validates :feasible_explanation, length: { maximum: Proposal.feasible_explanation_max_length }, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
-  validates :impact_description, length: { maximum: Proposal.impact_description_max_length }, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
-  validates :question, length: { in: 10..Proposal.question_max_length }, if: -> { Setting['org_name'] != "MASDEMOCRACIAEUROPA" }
-  validates :objective, length: { in: 10..Proposal.objective_max_length }, if: -> { Setting['org_name'] == "MASDEMOCRACIAEUROPA" }
+  validates :feasible_explanation, length: { maximum: Proposal.feasible_explanation_max_length }, if: -> { Setting['org_name'] == "Más Democracia en Europa" }
+  validates :impact_description, length: { maximum: Proposal.impact_description_max_length }, if: -> { Setting['org_name'] == "Más Democracia en Europa" }
+  validates :question, length: { in: 10..Proposal.question_max_length }, if: -> { Setting['org_name'] != "Más Democracia en Europa" }
+  validates :objective, length: { in: 10..Proposal.objective_max_length }, if: -> { Setting['org_name'] == "Más Democracia en Europa" }
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }, :unless => :skip_verification?
   validates :retired_reason, inclusion: { in: RETIRE_OPTIONS, allow_nil: true }
 
@@ -226,7 +226,7 @@ class Proposal < ActiveRecord::Base
 
   def self.proposals_orders(user)
     orders = %w{hot_score created_at relevance archival_date}
-    orders << "confidence_score" if Setting['org_name'] != "MASDEMOCRACIAEUROPA"
+    orders << "confidence_score" if Setting['org_name'] != "Más Democracia en Europa"
     orders << "recommendations" if user.present?
     orders
   end
