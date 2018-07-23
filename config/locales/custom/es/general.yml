@@ -19,8 +19,6 @@ es:
       colaboration_text: En colaboración con
       support_text: Apoyado por
       consul_html: "Este portal usa la aplicación <strong><a href=\"%{link}\">CONSUL</a></strong> que es software libre."
-  social:
-    linkedin: "LinkedIn de %{org}"
   proposals:
     index:
       alternative_html: "<strong>Propuesta alternativa a: <br class=\"show-for-small-only\" /><a href=\"%{link}\">%{title}</a></strong>"
