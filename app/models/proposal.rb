@@ -37,8 +37,6 @@ class Proposal < ActiveRecord::Base
   validates :description, presence: true, if: -> { Setting['org_name'] == "Más Democracia en Europa" }
   validates :question, presence: true, if: -> { Setting['org_name'] != "Más Democracia en Europa" }
   validates :objective, presence: true, if: -> { Setting['org_name'] == "Más Democracia en Europa" }
-  validates :feasible_explanation, presence: true, if: -> { Setting['org_name'] == "Más Democracia en Europa" }
-  validates :impact_description, presence: true, if: -> { Setting['org_name'] == "Más Democracia en Europa" }
   validates :summary, presence: true, if: -> { Setting['org_name'] != "Más Democracia en Europa" }
   validates :author, presence: true
   validates :responsible_name, presence: true, :unless => :skip_verification?

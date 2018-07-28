@@ -24,9 +24,9 @@ es:
       alternative_html: "<strong>Propuesta alternativa a: <br class=\"show-for-small-only\" /><a href=\"%{link}\">%{title}</a></strong>"
     form:
       proposal_feasible_explanation: ¿Es factible tu propuesta?
-      proposal_feasible_explanation_note_html: Explica brevemente cómo puede llevarse la propuesta a la práctica, incluyendo si es posible una estimación, aún en términos generales, de su coste. <br>(max 1700 caracteres ~ 300 palabras)
+      proposal_feasible_explanation_note_html: Puedes explicar brevemente cómo puede llevarse la propuesta a la práctica, incluyendo si es posible una estimación, aún en términos generales, de su coste. <br>(max 1700 caracteres ~ 300 palabras)
       proposal_impact_description: ¿Qué impacto puede tener tu propuesta?
-      proposal_impact_description_note_html: Describe las potenciales consecuencias de llevar tu propuesta a la práctica desde el punto de vista social, cultural, económico, politico, legal, medioambiental... Identifica quiénes serían los principales beneficiarios si la propuesta se llevase a la práctica. <br>(max 1700 caracteres ~ 300 palabras)
+      proposal_impact_description_note_html: Puedes describir las potenciales consecuencias de llevar tu propuesta a la práctica desde el punto de vista social, cultural, económico, politico, legal, medioambiental... Identifica quiénes serían los principales beneficiarios si la propuesta se llevase a la práctica. <br>(max 1700 caracteres ~ 300 palabras)
       proposal_objective: Objetivo/s concreto/s
       proposal_objective_note_html: "Todas las propuestas incluidas en esta plataforma tratan de una forma o de otra de mejorar la democracia en Europa. Es importante que tu propuesta tenga algunos objetivos más concretos dentro de ese gran objetivo común. <br>(max 1700 caracteres ~ 300 palabras)"
       proposal_text: Explica tu/vuestra propuesta
