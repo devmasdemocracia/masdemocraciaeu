@@ -49,10 +49,10 @@ describe Proposal do
       expect(proposal).not_to be_valid
     end
 
-    it "is not valid without feasible_explanation" do
+    it "is valid without feasible_explanation" do
       proposal.feasible_explanation = nil
 
-      expect(proposal).not_to be_valid
+      expect(proposal).to be_valid
     end
 
     it "is not valid without feasible_explanation longer than maximum length" do
@@ -61,10 +61,10 @@ describe Proposal do
       expect(proposal).not_to be_valid
     end
 
-    it "is not valid without impact_description" do
+    it "is valid without impact_description" do
       proposal.impact_description = nil
 
-      expect(proposal).not_to be_valid
+      expect(proposal).to be_valid
     end
 
     it "is not valid without impact_description longer than maximum length" do
