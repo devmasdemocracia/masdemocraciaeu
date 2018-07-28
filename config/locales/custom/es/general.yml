@@ -52,6 +52,9 @@ es:
         submit_button_custom: Envía tu propuesta
       suggest_warning_html: "Estás creando una propuesta alternativa a: <strong><a href=\"%{link}\">%{title}</a></strong>"
       start_complementary: "Crea una propuesta alternativa"
+    create:
+      form:
+        submit_button_custom: Envía tu propuesta
     edit:
       form:
         submit_button_custom: Guardar cambios
